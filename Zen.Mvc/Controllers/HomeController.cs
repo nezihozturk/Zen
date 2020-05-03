@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Zen.Business;
+using Zen.Entities.Concrete;
 using Zen.Mvc.Models;
 
 namespace Zen.Mvc.Controllers
@@ -16,17 +18,25 @@ namespace Zen.Mvc.Controllers
 
         private IProductService _productService;
 
-        public HomeController(ILogger<HomeController> logger, IProductService productService)
+        private IMapper _mapper;
+
+        public HomeController(ILogger<HomeController> logger, IProductService productService, IMapper mapper)
         {
             _logger = logger;
             _productService = productService;
+            _mapper = mapper;
         }
 
         public IActionResult Index()
         {
-            
+            var model = new ProductListViewModel
+            {
+                Products = _productService.GetAll()
+            };
 
-            return View();
+            //var model = _mapper.Map<List<Product>, List<ProductListViewModel>>(products);
+
+            return View(model);
         }
 
         public IActionResult Privacy()

@@ -21,11 +21,11 @@ namespace Zen.Core.DataAccess
             }
         }
 
-        public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null)
+        public List<TEntity> Get(Expression<Func<TEntity, bool>> filter = null)
         {
             using (var context = new TContext())
             {
-                return filter == null ? context.Set<TEntity>() : context.Set<TEntity>().Where(filter);
+                return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
             }
         }
 

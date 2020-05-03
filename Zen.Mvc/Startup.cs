@@ -2,12 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Zen.Business;
+using Zen.DataAccess.Abstract;
+using Zen.DataAccess.Concrete.EntityFramework;
+using Zen.Mvc.Helpers;
 
 namespace Zen.Mvc
 {
@@ -24,6 +29,14 @@ namespace Zen.Mvc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddScoped<IProductService, ProductManager>();
+
+            services.AddSingleton<IProductDal, EfProductDal>();
+
+            services.AddAutoMapper(typeof(Startup));
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

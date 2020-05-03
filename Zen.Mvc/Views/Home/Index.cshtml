@@ -1,8 +1,48 @@
-﻿@{
+﻿@model ProductListViewModel
+
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="row">
+
+    <div class="col-3">
+        <h3>Categories</h3>
+    </div>
+
+    <div class="col-9">
+
+        <h3>Products</h3>
+
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Name</td>
+                    <td>Stock</td>
+                </tr>
+            </thead>
+            <tbody>
+
+            @foreach (var product in Model.Products)
+            {
+                <tr>
+                    <td>@product.ProductId</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.UnitsInStock</td>
+                </tr>
+
+            }
+
+            </tbody>
+        </table>
+    </div>
+
+
 </div>
