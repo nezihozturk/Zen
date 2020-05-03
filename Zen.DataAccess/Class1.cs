@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Zen.Entities
+namespace Zen.DataAccess
 {
     public class Class1
     {
