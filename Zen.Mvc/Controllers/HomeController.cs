@@ -15,9 +15,7 @@ namespace Zen.Mvc.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        private IProductService _productService;
-
+        private readonly IProductService _productService;
         private IMapper _mapper;
 
         public HomeController(ILogger<HomeController> logger, IProductService productService, IMapper mapper)
@@ -25,6 +23,11 @@ namespace Zen.Mvc.Controllers
             _logger = logger;
             _productService = productService;
             _mapper = mapper;
+        }
+
+        public HomeController(IProductService productService)
+        {
+            _productService = productService;
         }
 
         public IActionResult Index()
