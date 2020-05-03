@@ -29,7 +29,7 @@ namespace Zen.Business
 
         public Product GetById(int productId)
         {
-            return _productDal.GetById(p => p.Id == productId);
+            return _productDal.GetById(p => p.ProductId == productId);
         }
     }
 }

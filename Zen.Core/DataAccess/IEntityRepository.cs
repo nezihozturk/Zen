@@ -10,7 +10,7 @@ namespace Zen.Core.DataAccess
 {
     public interface IEntityRepository<T> where T: IEntity
     {
-        IEnumerable<T> Get(Expression<Func<T, bool>> filter = null);
+        List<T> Get(Expression<Func<T, bool>> filter = null);
 
         T GetById(Expression<Func<T, bool>> filter);
 
