@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using AutoMapper;
+using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -49,9 +50,11 @@ namespace Zen.Mvc.Tests.Unit
 
             var result = homeController.Index();
 
+            var viewResult1 = result.Should().BeOfType<ViewResult>().Subject;
+
             var viewResult = Assert.IsType<ViewResult>(result);
 
-            Assert.IsAssignableFrom<ProductListViewModel>(viewResult.Model);
+            Assert.IsAssignableFrom<ProductListViewModel>(viewResult1.Model);
         }
     }
 }
