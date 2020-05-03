@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zen.Business", "Zen.Busines
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zen.Core", "Zen.Core\Zen.Core.csproj", "{9A70A90A-2389-4FA3-95C9-F2389AFA6D74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zen.Mvc", "Zen.Mvc\Zen.Mvc.csproj", "{4DD00C10-213F-4E82-987A-253A8831BC80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zen.Mvc", "Zen.Mvc\Zen.Mvc.csproj", "{4DD00C10-213F-4E82-987A-253A8831BC80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zen.WebApi", "Zen.WebApi\Zen.WebApi.csproj", "{C1662C65-8D9D-42D6-8B1F-AAF8FB4B3D5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4DD00C10-213F-4E82-987A-253A8831BC80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DD00C10-213F-4E82-987A-253A8831BC80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DD00C10-213F-4E82-987A-253A8831BC80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1662C65-8D9D-42D6-8B1F-AAF8FB4B3D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1662C65-8D9D-42D6-8B1F-AAF8FB4B3D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1662C65-8D9D-42D6-8B1F-AAF8FB4B3D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1662C65-8D9D-42D6-8B1F-AAF8FB4B3D5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
