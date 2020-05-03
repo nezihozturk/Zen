@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Zen.DataAccess\Zen.DataAccess.csproj" />
+    <ProjectReference Include="..\Zen.Entities\Zen.Entities.csproj" />
+  </ItemGroup>
+
 </Project>
